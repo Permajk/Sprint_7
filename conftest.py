@@ -12,8 +12,7 @@ def courier_payload_with_delete():
 
 # Создание, регистрация и удаление курьера
 @pytest.fixture
-def registered_courier():
-    payload = generate_courier()
+def registered_courier(courier_payload_with_delete):
+    payload = courier_payload_with_delete
     create_courier(payload)
     yield payload
-    delete_courier(payload)

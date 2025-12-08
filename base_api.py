@@ -1,5 +1,5 @@
 import requests
-from data import create_courier_url, login_courier_url, delete_courier_url, create_order_url
+from urls import create_courier_url, login_courier_url, delete_courier_url, create_order_url
 
 
 # Регистрирация курьера

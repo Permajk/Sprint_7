@@ -1,20 +1,4 @@
 
-# Главная страница
-main_url = 'https://qa-scooter.praktikum-services.ru'
-
-# Создать курьера
-create_courier_url = f'{main_url}/api/v1/courier'
-# Логин курьера
-login_courier_url = f'{main_url}/api/v1/courier/login'
-# Создать заказ
-create_order_url = f'{main_url}/api/v1/orders'
-# Посмотреть список заказов
-get_order_list_url = f'{main_url}/api/v1/orders'
-# Удалить курьера
-delete_courier_url = f'{main_url}/api/v1/courier/'
-
-
-
 # Базовые данные для заказа
 def base_order_payload(color=''):
     order_payload = {
@@ -37,3 +21,10 @@ order_colors = [
     ['BLACK', 'GREY'],
     []
 ]
+
+
+# Варианты ответов ошибок в теле
+Создание_курьера_с_повторяющимся_логином = 'Этот логин уже используется. Попробуйте другой.'
+Создание_курьера_без_логина_или_пароля = 'Недостаточно данных для создания учетной записи'
+Авторизация_курьера_без_логина_или_пароля = 'Недостаточно данных для входа'
+Авторизация_курьера_с_несуществующим_логином_и_паролем = 'Учетная запись не найдена'

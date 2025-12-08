@@ -1,18 +1,39 @@
 
-class Urls:
+# Главная страница
+main_url = 'https://qa-scooter.praktikum-services.ru'
 
-    # Главная страница
-    main_url = 'https://qa-scooter.praktikum-services.ru'
-    
-    # Создать курьера
-    create_courier = f'{main_url}/api/v1/courier'
-    # Логин курьера
-    login_courier = f'{main_url}/api/v1/courier/login'
-    # Создать заказ
-    create_order = f'{main_url}/api/v1/orders'
-    # Посмотреть список заказов
-    get_order_list = f'{main_url}/api/v1/orders'
-    # Удалить курьера
-    delete_courier = f'{main_url}/api/v1/courier/'
-    
+# Создать курьера
+create_courier_url = f'{main_url}/api/v1/courier'
+# Логин курьера
+login_courier_url = f'{main_url}/api/v1/courier/login'
+# Создать заказ
+create_order_url = f'{main_url}/api/v1/orders'
+# Посмотреть список заказов
+get_order_list_url = f'{main_url}/api/v1/orders'
+# Удалить курьера
+delete_courier_url = f'{main_url}/api/v1/courier/'
 
+
+
+# Базовые данные для заказа
+def base_order_payload(color=''):
+    order_payload = {
+    'firstName': 'Алексей',
+    'lastName': 'Рогожников',
+    'address': 'Пермь, Пермская, 5',
+    'metroStation': 'Таганская',
+    'phone': '+79994509000',
+    'rentTime': 1,
+    'deliveryDate': '2025-12-10',
+    'comment': 'ЖДУ'
+    }
+    order_payload['color'] = color
+    return order_payload
+
+# Варианты цветов для параметризации
+order_colors = [
+    ['BLACK'],
+    ['GREY'],
+    ['BLACK', 'GREY'],
+    []
+]
